@@ -125,7 +125,7 @@ tta_pipeline = [
                     }]])
 ]
 train_dataloader = dict(
-    batch_size=5,
+    batch_size=6,
     num_workers=2,
     persistent_workers=True,
     sampler=dict(type='InfiniteSampler', shuffle=True),
@@ -209,7 +209,7 @@ param_scheduler = [
         end=160000,
         by_epoch=False)
 ]
-train_cfg = dict(type='IterBasedTrainLoop', max_iters=20000, val_interval=500)
+train_cfg = dict(type='IterBasedTrainLoop', max_iters=20000, val_interval=2500)
 val_cfg = dict(type='ValLoop')
 test_cfg = dict(type='TestLoop')
 default_hooks = dict(

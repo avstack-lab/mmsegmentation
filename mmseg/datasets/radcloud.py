@@ -14,7 +14,7 @@ class RadcloudDataset(BaseSegDataset):
 
     METAINFO = dict(
         classes=("point","background"),
-        palette=[[255,255,255],[0,0,0]])
+        palette=[[1,1,1],[0,0,0]])
 
     def __init__(self,
                  seg_map_suffix='.png',
