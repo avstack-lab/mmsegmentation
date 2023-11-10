@@ -16,19 +16,14 @@ class RadcloudDataset(BaseSegDataset):
         classes=("point","background"),
         palette=[[1,1,1],[0,0,0]])
 
-    def __init__(self,
-                 seg_map_suffix='.png',
-                 img_suffix=".jpg",
-                 data_prefix=dict(
+    def __init__(self, **kwargs) -> None:
+        super().__init__(
+            seg_map_suffix=".png",
+            img_suffix=".jpg",
+            data_prefix=dict(
                      img_path="radar",
                      seg_map_path="lidar"
                  ),
-                 reduce_zero_label=False,
-                 **kwargs) -> None:
-        super().__init__(
-            seg_map_suffix=seg_map_suffix,
-            img_suffix=img_suffix,
-            data_prefix=data_prefix,
-            reduce_zero_label=reduce_zero_label,
+            reduce_zero_label=False,
             **kwargs)
         

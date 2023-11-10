@@ -17,7 +17,7 @@ model = dict(
         pad_val=0,
         seg_pad_val=255,
         size=(512, 512)),
-    pretrained='open-mmlab://resnet101_v1c',
+    pretrained=None,
     backbone=dict(
         type='ResNetV1c',
         depth=101,
@@ -132,7 +132,6 @@ train_dataloader = dict(
     sampler=dict(type='InfiniteSampler', shuffle=True),
     dataset=dict(
         type='RadcloudDataset',
-        _delete_=True,
         data_root='/data/david/CPSL_Ground/train',
         pipeline=[
             dict(type='LoadImageFromFile'),
@@ -154,7 +153,6 @@ val_dataloader = dict(
     sampler=dict(type='DefaultSampler', shuffle=False),
     dataset=dict(
         type='RadcloudDataset',
-        _delete_=True,
         data_root='/data/david/CPSL_Ground/test',
         pipeline=[
             dict(type='LoadImageFromFile'),
@@ -169,7 +167,6 @@ test_dataloader = dict(
     sampler=dict(type='DefaultSampler', shuffle=False),
     dataset=dict(
         type='RadcloudDataset',
-        _delete_=True,
         data_root='/data/david/CPSL_Ground/test',
         pipeline=[
             dict(type='LoadImageFromFile'),
