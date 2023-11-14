@@ -14,6 +14,8 @@ from .transforms import (CLAHE, AdjustGamma, Albu, BioMedical3DPad,
                          ResizeShortestEdge, ResizeToMultiple, RGB2Gray,
                          SegRescale)
 
+from .numpy_loading import (LoadImageFromNP,LoadAnnotationsNP)
+
 # yapf: enable
 __all__ = [
     'LoadAnnotations', 'RandomCrop', 'BioMedical3DRandomCrop', 'SegRescale',
@@ -24,5 +26,5 @@ __all__ = [
     'ResizeShortestEdge', 'BioMedicalGaussianNoise', 'BioMedicalGaussianBlur',
     'BioMedical3DRandomFlip', 'BioMedicalRandomGamma', 'BioMedical3DPad',
     'RandomRotFlip', 'Albu', 'LoadSingleRSImageFromFile', 'ConcatCDInput',
-    'LoadMultipleRSImageFromFile'
+    'LoadMultipleRSImageFromFile', 'LoadImageFromNP', 'LoadAnnotationsNP'
 ]

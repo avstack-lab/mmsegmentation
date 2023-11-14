@@ -99,6 +99,8 @@ def _preprare_data(imgs: ImageType, model: BaseSegmentor):
     for t in cfg.test_pipeline:
         if t.get('type') == 'LoadAnnotations':
             cfg.test_pipeline.remove(t)
+        if t.get('type') == 'LoadAnnotationsNP':
+            cfg.test_pipeline.remove(t)
 
     is_batch = True
     if not isinstance(imgs, (list, tuple)):
