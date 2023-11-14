@@ -13,13 +13,13 @@ class RadcloudDataset(BaseSegDataset):
     """
 
     METAINFO = dict(
-        classes=("point","background"),
-        palette=[[1,1,1],[0,0,0]])
+        classes=("background","point"),
+        palette=[[0,0,0],[1,1,1]])
 
     def __init__(self, **kwargs) -> None:
         super().__init__(
-            seg_map_suffix=".png",
-            img_suffix=".jpg",
+            seg_map_suffix=".npy",
+            img_suffix=".npy",
             data_prefix=dict(
                      img_path="radar",
                      seg_map_path="lidar"
