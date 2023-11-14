@@ -94,6 +94,23 @@ def main():
                     img[:, :, 0] // 128,
                     osp.join(out_dir, 'annotations', 'validation',
                              osp.splitext(img_name)[0] + '.png'))
+        else:
+            now_dir = osp.join(tmp_dir, "test","mask")
+            if osp.exists(now_dir):
+                for img_name in os.listdir(now_dir):
+                    cap = cv2.VideoCapture(osp.join(now_dir, img_name))
+                    ret, img = cap.read()
+                    # The annotation img should be divided by 128, because some of
+                    # the annotation imgs are not standard. We should set a
+                    # threshold to convert the nonstandard annotation imgs. The
+                    # value divided by 128 is equivalent to '1 if value >= 128
+                    # else 0'
+                    out_name = osp.splitext(img_name)[0]
+                    out_name = out_name.replace("test_mask","manual1")
+                    mmcv.imwrite(
+                        img[:, :, 0] // 128,
+                        osp.join(out_dir, 'annotations', 'validation',
+                                out_name + '.png'))
 
         now_dir = osp.join(tmp_dir, 'test', '2nd_manual')
         if osp.exists(now_dir):
