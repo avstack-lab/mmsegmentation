@@ -7,5 +7,12 @@ _base_ = [
 
 
 default_hooks = dict(
-    logger=dict(type='LoggerHook', interval=500, log_metric_by_epoch=False)
+    logger=dict(
+        type='LoggerHook',
+        interval=500,
+        log_metric_by_epoch=False),
+    checkpoint = dict(
+        max_keep_ckpts=2,
+        save_best='mAcc',
+    )
 )
