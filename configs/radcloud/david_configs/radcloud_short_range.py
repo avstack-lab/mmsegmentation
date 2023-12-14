@@ -2,7 +2,7 @@ _base_ = [
     './radcloud_original.py'
 ]
 
-in_channels = 40
+in_channels = 64
 
 model = dict(
     backbone = dict(
