@@ -16,3 +16,21 @@ default_hooks = dict(
         save_best='mAcc',
     )
 )
+
+model = dict(
+    backbone = dict(
+        norm_cfg = dict(
+            type='BN'
+        )
+    ),
+    decode_head = dict(
+        norm_cfg = dict(
+            type="BN"
+        )
+    ),
+    auxiliary_head = dict(
+        norm_cfg = dict(
+            type = "BN"
+        )
+    )
+)
