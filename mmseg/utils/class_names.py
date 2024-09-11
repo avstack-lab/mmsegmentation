@@ -473,6 +473,15 @@ def bdd100k_palette():
             [0, 0, 230], [119, 11, 32]]
 
 
+
+def fov_bev_classes():
+    return ["invisible", "visible"]
+
+
+def fov_bev_palette():
+    return [128, 64, 128], [10, 120, 232]
+
+
 dataset_aliases = {
     'cityscapes': ['cityscapes'],
     'ade': ['ade', 'ade20k'],
@@ -491,7 +500,8 @@ dataset_aliases = {
     'lip': ['LIP', 'lip'],
     'mapillary_v1': ['mapillary_v1'],
     'mapillary_v2': ['mapillary_v2'],
-    'bdd100k': ['bdd100k']
+    'bdd100k': ['bdd100k'],
+    'fov_bev': ['fov_bev'],
 }
 
 
